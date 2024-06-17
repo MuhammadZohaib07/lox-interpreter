@@ -1,0 +1,30 @@
+// Global variable test
+var a = "before"; // Define global variable a
+print a; // Expected output: "before"
+var a = "after"; // Reassign global variable a
+print a; // Expected output: "after"
+
+// Global variables for scope testing
+var a = "global a"; // Define global variable a
+var b = "global b"; // Define global variable b
+var c = "global c"; // Define global variable c
+
+{
+  // Local variable test in outer block
+  var a = "outer a"; // Define local variable a, shadows global a
+  var b = "outer b"; // Define local variable b, shadows global b
+  {
+    // Local variable test in inner block
+    var a = "inner a"; // Define local variable a, shadows outer a
+    print a; // Expected output: "inner a" (local to inner block)
+    print b; // Expected output: "outer b" (from outer block)
+    print c; // Expected output: "global c" (from global scope)
+  }
+  print a; // Expected output: "outer a" (local to outer block)
+  print b; // Expected output: "outer b" (local to outer block)
+  print c; // Expected output: "global c" (from global scope)
+}
+
+print a; // Expected output: "global a" (global scope)
+print b; // Expected output: "global b" (global scope)
+print c; // Expected output: "global c" (global scope)

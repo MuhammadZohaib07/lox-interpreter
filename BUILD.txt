@@ -1,0 +1,72 @@
+BUILD INSTRUCTIONS
+
+1. Environment Setup:
+   - Ensure you have Python 3.12 installed on your machine.
+   - Create a virtual environment to manage dependencies (optional but recommended):
+     ```
+     python -m venv venv
+     ```
+   - Activate the virtual environment:
+     - On Windows:
+       ```
+       venv\Scripts\activate
+       ```
+     - On macOS and Linux:
+       ```
+       source venv/bin/activate
+       ```
+
+2. Directory Structure:
+   - Ensure the directory structure follows this format:
+     ```
+     project_root/
+     ├── src/
+     │   ├── ast_printer.py
+     │   ├── environment.py
+     │   ├── Expr.py
+     │   ├── lox.py
+     │   ├── lox_callable.py
+     │   ├── lox_class.py
+     │   ├── lox_function.py
+     │   ├── lox_instance.py
+     │   ├── lox_interpreter.py
+     │   ├── lox_parser.py
+     │   ├── lox_resolver.py
+     │   ├── lox_return.py
+     │   ├── lox_token.py
+     │   ├── scanner.py
+     │   ├── Stmt.py
+     │   └── token_type.py
+     ├── tests/
+     │   ├── classes.lox
+     │   ├── ForLoop.lox
+     │   ├── stage1.lox
+     │   ├── stage2.lox
+     │   ├── stage3.lox
+     │   ├── stage4.lox
+     │   ├── stage5.lox
+     │   ├── superclass.lox
+     │   └── variables.lox
+     ├── tool/
+     │   └── generate_ast.py
+     ├── BUILD.txt
+     └── README.txt
+     ```
+
+3. Run the Interpreter:
+   - Change directory to `src`:
+     ```
+     cd src
+     ```
+   - To run the interpreter and display the input prompt for stages, use the following command:
+     ```
+     python lox.py
+     ```
+
+4. Running the Tests:
+   - To run the interpreter on a specific test file, enter the stage number from the menu when prompted, e.g.:
+     ```
+     Enter the stage number you want to see (e.g., 1, 2, 3, 4, 5, 6, 7, 8, 9) or 'q'/'quit' to exit: 1
+     ```
+
+If you encounter any issues or have further questions, refer to the README.txt file or contact the project maintainer.
